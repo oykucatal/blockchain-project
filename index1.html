@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.8px 'Helvetica Neue'; color: #9191af; -webkit-text-stroke: #9191af}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    span.s1 {font: 12.0px 'Apple Color Emoji'}
+    span.s2 {font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: 0px #000000}
+    span.s3 {font-kerning: none; background-color: #1a1a29}
+    span.s4 {font: 12.0px Times; font-kerning: none; -webkit-text-stroke: 0px #000000}
+    span.s5 {font-kerning: none}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;title&gt;Rectangle Area Calculator - 220504001&lt;/title&gt;</p>
+<p class="p1">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;</p>
+<p class="p1">&lt;script src="https://cdn.jsdelivr.net/npm/web3@1.8.2/dist/web3.min.js"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>background: #eef1f4;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.container-box {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>margin-top: 80px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>max-width: 500px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>background: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>padding: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box-shadow: 0 5px 15px rgba(0,0,0,0.10);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3 class="text-center mb-4"&gt;Rectangle Area (Blockchain) <span class="s1">🧮</span>&lt;/h3&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label class="form-label"&gt;Width&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="number" class="form-control" id="widthInput" placeholder="Enter width"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-primary w-100 mb-3" onclick="setWidth()"&gt;Set Width 220504002&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="mb-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label class="form-label"&gt;Height&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="number" class="form-control" id="heightInput" placeholder="Enter height"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-primary w-100 mb-3" onclick="setHeight()"&gt;Set Height 220504002&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">       </span>&lt;button class="btn btn-success w-100 mb-3" onclick="calculateArea()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>Area 220504002</p>
+<p class="p1">&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h5 class="text-center mt-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Area Result &lt;span id="resultArea"&gt;-&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/h5&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">// Connect to MetaMask</p>
+<p class="p1">if (window.ethereum) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>window.web3 = new Web3(ethereum);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ethereum.request({ method: "eth_requestAccounts" });</p>
+<p class="p1">} else {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>alert("MetaMask not detected. Please install MetaMask!");</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="s2">const CONTRACT_ADDRESS = "</span><span class="s3">0xFeD4D893A4b57435e63D4cc30e396a91418BA969”</span></p>
+<p class="p1">const CONTRACT_ABI = <span class="s4">[</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span>{</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"inputs": [</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"internalType": "uint256",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"name": "h",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"type": "uint256"</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>],</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"name": "setHeight",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"outputs": [],</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"stateMutability": "nonpayable",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"type": "function"</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span>},</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span>{</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"inputs": [</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"internalType": "uint256",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"name": "w",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"type": "uint256"</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>],</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"name": "setWidth",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"outputs": [],</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"stateMutability": "nonpayable",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"type": "function"</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span>},</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span>{</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"inputs": [],</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"name": "area",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"outputs": [</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"internalType": "uint256",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"name": "",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"type": "uint256"</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>],</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"stateMutability": "view",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"type": "function"</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span>},</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span>{</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"inputs": [],</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"name": "getHeight",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"outputs": [</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"internalType": "uint256",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"name": "",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"type": "uint256"</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>],</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"stateMutability": "view",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"type": "function"</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span>},</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span>{</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"inputs": [],</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"name": "getWidth",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"outputs": [</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>{</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"internalType": "uint256",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"name": "",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"type": "uint256"</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>],</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"stateMutability": "view",</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>"type": "function"</span></p>
+<p class="p4"><span class="s5"><span class="Apple-tab-span">	</span>}</span></p>
+<p class="p4"><span class="s5">]</span></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);</p>
+<p class="p2"><br></p>
+<p class="p1">async function setWidth() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const width = document.getElementById("widthInput").value;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const accounts = await ethereum.request({ method: "eth_requestAccounts" });</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>await contract.methods.setWidth(width).send({ from: accounts[0] });</p>
+<p class="p1"><span class="Apple-converted-space">    </span>alert("Width is successfully set on the blockchain!");</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">async function setHeight() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const height = document.getElementById("heightInput").value;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const accounts = await ethereum.request({ method: "eth_requestAccounts" });</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>await contract.methods.setHeight(height).send({ from: accounts[0] });</p>
+<p class="p1"><span class="Apple-converted-space">    </span>alert("Height is successfully set on the blockchain!");</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">async function calculateArea() {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const area = await contract.methods.area().call();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById("resultArea").innerText = area;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} catch (err) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alert("Width &amp; Height must be set before calculating area!");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
